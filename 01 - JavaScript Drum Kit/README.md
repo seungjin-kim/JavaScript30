@@ -62,3 +62,8 @@ function playSound(e) {
 ```
 const sound = document.querySelector(`audio[data-key="${e.keyCode}"]`);
 ```
+- `querySelector() returns first Eleent within the document that matches the specified selector, or group of selectors. If no matches are found, null is returned
+```
+element = document.querySelector(selectors);
+```
+- Attribute selector matches elements based on presence or value of a given attribute
