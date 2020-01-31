@@ -22,22 +22,20 @@
 
   <style>
     :root {
-      --base: #ffc600;
-      --spacing: 10px;
+      --base: #BADA55;
+      --spacing: 20px;
       --blur: 10px;
     }
 
     img {
-      padding: var(--spacing);
       background: var(--base);
+      padding: var(--spacing);
       filter: blur(var(--blur));
     }
 
     .hl {
       color: var(--base);
     }
-
-
 
     /*
       misc styles, nothing to do with CSS variables
@@ -62,18 +60,15 @@
   </style>
 
   <script>
-    const inputs = document.querySelectorAll('.controls input');
-
     function handleUpdate() {
-      const suffix = this.dataset.sizing || '';
-      console.log(this)
-      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix)
-      
-      
+      console.log(this.dataset.sizing);
+      const suffix = this.dataset.sizing || ''
+      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
     }
-
-    inputs.forEach(input => input.addEventListener('change', handleUpdate));
-    inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+    
+    const inputs = document.querySelectorAll('.controls input');
+    inputs.forEach(input => input.addEventListener('change', handleUpdate))
+    // inputs.forEach(input => input.addEventListener('mouseover', handleUpdate))
     
 
   </script>
